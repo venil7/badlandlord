@@ -6,7 +6,13 @@ class Details extends React.Component {
   constructor(...args) {
     super(...args);
     let { index } = this.props.params;
-    this.props.dispatch(detailsThunk(index));
+    if (index) {
+      this.props.dispatch(detailsThunk(index));
+    } else {
+      setTimeout(() => {
+        this.props.history.push("/list");
+      });
+    }
   }
 
   render() {
@@ -14,7 +20,8 @@ class Details extends React.Component {
 
     return (
       <ul>
-        {Object.keys(this.props.details).map((key) => <li>{key}: {this.props.details[key]}</li>)}
+        {Object.keys(this.props.details).map((key) =>
+          <li key={key} >{key}: {this.props.details[key]}</li>)}
       </ul>
     );
   }

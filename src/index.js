@@ -29,7 +29,7 @@ let root = document.getElementById('root');
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
+    <Router history={history}>
       <Route path="/" component={App}>
         <Route path="list" component={List}/>
         <Route path="details" component={Details}>

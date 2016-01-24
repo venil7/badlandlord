@@ -13,7 +13,7 @@ const receiveList = (json) => {
 };
 
 const fetchThunk = () => (dispatch) => {
-  return fetch(`/data.json`)
+  return fetch(`/data/data.json`)
     .then((response) => response.json())
     .then((json) => dispatch(receiveList(json)));
 };

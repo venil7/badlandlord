@@ -8,7 +8,7 @@ const receiveDetails = (details) => {
 };
 
 const detailsThunk = (index) => (dispatch) => {
-  return fetch(`/data.json?index=${index}`)
+  return fetch(`/data/data.json?index=${index}`)
     .then((response) => response.json())
     .then((json) => {
       let { items } = json;
