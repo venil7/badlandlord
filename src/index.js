@@ -7,6 +7,7 @@ import { About } from './about';
 import { Details } from './details';
 import { listReducer } from './list-reducer';
 import { detailsReducer } from './details-reducer';
+import { filterReducer } from './filter-reducer';
 
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
@@ -21,6 +22,7 @@ const createStoreWithMiddleware = applyMiddleware(thunkMiddleware, routerMiddlew
 
 const store = createStoreWithMiddleware(combineReducers({
   list: listReducer,
+  filter: filterReducer,
   routing: routeReducer,
   details: detailsReducer
 }));
