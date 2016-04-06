@@ -13,6 +13,9 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/static/'
   },
+  resolve: {
+    extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js', '.jsx']
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
@@ -22,6 +25,9 @@ module.exports = {
       test: /\.jsx?/,
       loaders: ['babel'],
       include: path.join(__dirname, 'src')
+    }, {
+      test: /\.tsx?$/,
+      loader: 'babel-loader!ts-loader'
     }]
   }
 };
