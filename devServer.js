@@ -1,4 +1,5 @@
 var path = require('path');
+var env = require('dotenv').config({silent: true});
 var express = require('express');
 var webpack = require('webpack');
 var config = require('./webpack.config.dev');
@@ -26,4 +27,5 @@ app.listen(3000, 'localhost', function(err) {
   }
 
   console.log('Listening at http://localhost:3000');
+  console.log(process.env.facebook_app_id);
 });

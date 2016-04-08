@@ -18,7 +18,12 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify({
+        facebook_app_id: process.env.facebook_app_id
+      })
+    })
   ],
   module: {
     loaders: [{
@@ -26,8 +31,8 @@ module.exports = {
       loaders: ['babel'],
       include: path.join(__dirname, 'src')
     }, {
-      test: /\.tsx?$/,
-      loader: 'babel-loader!ts-loader'
-    }]
+        test: /\.tsx?$/,
+        loader: 'babel-loader!ts-loader'
+      }]
   }
 };
