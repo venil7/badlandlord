@@ -1,12 +1,12 @@
 {
-  "name": "redux-routing-example",
+  "name": "bad-landlord",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
     "history": "^1.17.0",
-    "react": "^0.14.6",
-    "react-dom": "^0.14.6",
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0",
     "react-redux": "^4.0.6",
     "react-router": "^1.0.3",
     "redux": "^3.0.5",
@@ -40,7 +40,8 @@
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
     "start": "node devServer.js",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "postinstall": "tsd install"
   },
   "author": "",
   "license": "ISC"
