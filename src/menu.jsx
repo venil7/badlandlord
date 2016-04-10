@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 class Menu extends React.Component {
   active(pathname) {
-    let {isActive} = this.props.history;
+    let {isActive} = this.props.router;
     return isActive(pathname) ? "active" : "";
   }
   render() {

@@ -5,7 +5,6 @@ import { filter } from './filter-actions';
 class Filter extends React.Component {
   onChange(event) {
     this.props.dispatch(filter(event.target.value));
-    // console.log(this.props);
   }
   render() {
     return (

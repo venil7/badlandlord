@@ -3,14 +3,22 @@ import { connect } from 'react-redux';
 import { detailsThunk } from './details-actions';
 
 class Details extends React.Component {
+
+  static get contextTypes() {
+    return {
+      router: React.PropTypes.object.isRequired
+    };
+  }
+
   constructor(...args) {
     super(...args);
     let { index } = this.props.params;
     if (index) {
       this.props.dispatch(detailsThunk(index));
     } else {
+      const { router } = this.context;
       setTimeout(() => {
-        this.props.history.push("/list");
+        router.push("/list");
       });
     }
   }

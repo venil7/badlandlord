@@ -13,23 +13,21 @@ import { fbReducer } from './fb-reducer';
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
-import { createHistory } from 'history';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
-import { syncHistory, routeReducer } from 'redux-simple-router';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
-const history = createHistory();
-const routerMiddleware = syncHistory(/*browserHistory*/history);
-const createStoreWithMiddleware = applyMiddleware(thunkMiddleware, routerMiddleware)(createStore)
 
+const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore)
 const store = createStoreWithMiddleware(combineReducers({
   list: listReducer,
   filter: filterReducer,
-  routing: routeReducer,
+  routing: routerReducer,
   details: detailsReducer,
   status: fbReducer
 }));
 
-let root = document.getElementById('root');
+const history = syncHistoryWithStore(browserHistory, store);
+const root = document.getElementById('root');
 
 ReactDOM.render(
   <Provider store={store}>

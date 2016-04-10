@@ -11,6 +11,7 @@ class List extends React.Component {
   }
 
   render() {
+
     let { items = [], filter } = this.props;
     return (
       <div>
