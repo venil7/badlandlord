@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "babel-plugin-transform-decorators": "^6.6.5",
     "dotenv": "^2.0.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",

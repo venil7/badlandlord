@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { browserHistory } from 'react-router'
 
 import { Menu } from './menu';
-import { List } from './list';
+import { Login } from './login';
 
 class App extends React.Component {
 
@@ -14,14 +14,21 @@ class App extends React.Component {
   }
 
   render() {
-    const {router} = this.context;
-    return (
-      <div className="app">
-        <Menu router={router} />
-        {this.props.children || 'welcome'}
-      </div>
-    );
+    const { status } = this.props;
+    if (status.authenticated) {
+      const {router} = this.context;
+      return (
+        <div className="app">
+          <Menu router={router} />
+          {this.props.children || 'welcome'}
+        </div>
+      );
+    }
+
+    return <Login status={status} />
   }
 }
+
+App = connect(({status}) => ({status}))(App);
 
 export { App };
