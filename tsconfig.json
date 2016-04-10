@@ -2,12 +2,11 @@
   "compilerOptions": {
     "target": "es6",
     "sourceMap": true,
-    "jsx": "react"
+    "jsx": "react",
+    "experimentalDecorators": true
   },
   "files": [
-    "typings/react/react.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
+    "typings/tsd.d.ts",
+    "src/typings/other.d.ts"
   ]
 }

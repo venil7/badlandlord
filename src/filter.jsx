@@ -11,12 +11,12 @@ class Filter extends React.Component {
     return (
       <input type="text"
         placeholder="filter.."
-        onChange={this.onChange.bind(this)} />
+        onChange={(e) => this.onChange(e)} />
     );
   }
 }
 
-Filter = connect(state => {
+Filter = connect((state) => {
   return {
     filter: state.filter
   };

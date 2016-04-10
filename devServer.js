@@ -25,7 +25,5 @@ app.listen(3000, 'localhost', function(err) {
     console.log(err);
     return;
   }
-
   console.log('Listening at http://localhost:3000');
-  console.log(process.env.facebook_app_id);
 });

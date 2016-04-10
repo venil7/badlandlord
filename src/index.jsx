@@ -8,6 +8,7 @@ import { Details } from './details';
 import { listReducer } from './list-reducer';
 import { detailsReducer } from './details-reducer';
 import { filterReducer } from './filter-reducer';
+import { fbReducer } from './fb-reducer';
 
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
@@ -24,7 +25,8 @@ const store = createStoreWithMiddleware(combineReducers({
   list: listReducer,
   filter: filterReducer,
   routing: routeReducer,
-  details: detailsReducer
+  details: detailsReducer,
+  status: fbReducer
 }));
 
 let root = document.getElementById('root');

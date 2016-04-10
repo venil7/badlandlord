@@ -4,10 +4,10 @@ import { Menu } from './menu';
 import { List } from './list';
 
 class App extends React.Component {
-  constructor(...args) {
-    super(...args);
-    // console.log(this.props.location);
-  }
+  // constructor(...args) {
+  //   super(...args);
+  //   // console.log(this.props.location);
+  // }
   render() {
     return (
       <div className="app">

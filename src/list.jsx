@@ -30,7 +30,7 @@ class List extends React.Component {
   }
 }
 
-List = connect(state => {
+List = connect((state) => {
   return {
     items: state.list,
     filter: state.filter

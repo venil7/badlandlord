@@ -20,9 +20,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env': JSON.stringify({
-        facebook_app_id: process.env.facebook_app_id
-      })
+      'process.env': {
+        'facebook_app_id': JSON.stringify(process.env.facebook_app_id)
+      }
     })
   ],
   module: {
